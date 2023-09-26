@@ -78,7 +78,7 @@ public class Prefracture : MonoBehaviour
             // Fire the completion callback
             if (callbackOptions.onCompleted != null)
             {
-                callbackOptions.onCompleted.Invoke();
+                callbackOptions.onCompleted.Invoke(fragmentRoot);
             }
         }
     }
@@ -123,7 +123,7 @@ public class Prefracture : MonoBehaviour
         var unfreeze = obj.AddComponent<UnfreezeFragment>();
         unfreeze.unfreezeAll = prefractureOptions.unfreezeAll;
         unfreeze.triggerOptions = this.triggerOptions;
-        unfreeze.onFractureCompleted = callbackOptions.onCompleted;
+        //unfreeze.onFractureCompleted = callbackOptions.onCompleted; Ive done a thing here, lets see
         
         return obj;
     }
